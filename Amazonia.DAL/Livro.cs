@@ -1,3 +1,4 @@
+using System;
 namespace Amazonia.DAL
 {
    public abstract class Livro
@@ -8,6 +9,13 @@ namespace Amazonia.DAL
       public string Descricao { get; set; }
       public string Autor { get; set; }   
       private Idioma Idioma { get; set; } //Português, Espanhol , Ingles
+   
+      public virtual decimal ObterPreco()
+      {
+         return Preco;
+      }
    } 
+
+   
 }
 

@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazonia.WebAPI", "Amazonia
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazonia.WebAPP", "Amazonia.WebAPP\Amazonia.WebAPP.csproj", "{454F2AD8-C660-4E15-B7F7-13E8297DE17C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazonia.ConsoleApp", "Amazonia.ConsoleApp\Amazonia.ConsoleApp.csproj", "{9D837F7E-68DE-42B8-841A-95A0F7C672C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,5 +74,17 @@ Global
 		{454F2AD8-C660-4E15-B7F7-13E8297DE17C}.Release|x64.Build.0 = Release|Any CPU
 		{454F2AD8-C660-4E15-B7F7-13E8297DE17C}.Release|x86.ActiveCfg = Release|Any CPU
 		{454F2AD8-C660-4E15-B7F7-13E8297DE17C}.Release|x86.Build.0 = Release|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Debug|x64.Build.0 = Debug|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Debug|x86.Build.0 = Debug|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Release|x64.ActiveCfg = Release|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Release|x64.Build.0 = Release|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Release|x86.ActiveCfg = Release|Any CPU
+		{9D837F7E-68DE-42B8-841A-95A0F7C672C0}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
