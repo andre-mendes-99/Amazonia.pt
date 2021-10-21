@@ -20,7 +20,7 @@ namespace Amazonia.ConsoleApp
                var novocliente = new Cliente();
                System.Console.WriteLine("Nome: ");
                novocliente.Nome = Console.ReadLine();
-
+               novocliente.DataNascimento  = new DateTime(DateTime.Now.Year,DateTime.Now.Month, DateTime.Now.Day);
                repo.Create(novocliente);
             } while (Console.ReadKey().Key != ConsoleKey.Tab);
 
