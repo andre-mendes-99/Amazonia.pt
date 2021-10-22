@@ -1,34 +1,73 @@
 ﻿using System;
-using Amazonia.DAL;
-using Amazonia.DAL.Repositories;
-namespace Amazonia.ConsoleApp
+using Amazonia.DAL.Repositorios;
+
+
+namespace Amazonia.ConsoleAPP
 {
     class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
-            var repo = new ClienteRepository();
-            var lista = repo.ReadAll();
-            foreach (var item in lista)
-            {
-                System.Console.WriteLine(item);
-            }
-            
-            do
-            {
-               var novocliente = new Cliente();
-               System.Console.WriteLine("Nome: ");
-               novocliente.Nome = Console.ReadLine();
-               novocliente.DataNascimento  = new DateTime(DateTime.Now.Year,DateTime.Now.Month, DateTime.Now.Day);
-               repo.Create(novocliente);
-            } while (Console.ReadKey().Key != ConsoleKey.Tab);
+            Console.WriteLine("Consulta do Database");
 
-            var listanova = repo.ReadAll();
-            foreach (var item in listanova)
+            var repo = new RepositorioCliente();
+            // var listaClientes = repo.ObterTodos();
+
+            var listaClientes = repo.ObterTodosQueComecemPor("J");
+
+
+            foreach (var item in listaClientes)
             {
-                System.Console.WriteLine(item);
+               Console.WriteLine(item);
             }
+
+
+
+            var listaClientesAdultos = repo.ObterTodosQueTenhamPeloMenos18Anos();
+            foreach (var item in listaClientesAdultos)
+            {
+               Console.WriteLine(item);
+            }
+
+
+            var listaClientesAdultosComecandoComJ = repo.ObterTodosQueTenhamPeloMenos18AnosENomeComecePor("J");
+            foreach (var item in listaClientesAdultosComecandoComJ)
+            {
+               Console.WriteLine(item);
+            }
+
+
+
+            var listagemTotal = repo.ObterTodos();
+            var joao = repo.ObterPorNome("Joao");
+            System.Console.WriteLine(joao);
+            System.Console.WriteLine($"Database contem: {listagemTotal.Count} clientes");
+            repo.Apagar(joao);
+            
+
+            var listagemAposApagar = repo.ObterTodos();
+              System.Console.WriteLine($"Database contem: {listagemAposApagar.Count} clientes");
+
+
+            var maria = repo.ObterPorNome("Maria");
+            var clienteNovo = repo.Atualizar(maria.Nome, "Maria Joao da Silva");
+            System.Console.WriteLine(clienteNovo);
+
+
+            // Console.WriteLine("Criacao de Novos Clientes no Database");
+            // do{
+            //     var novoCliente = new Cliente();
+            //     Console.WriteLine("Informe o nome");
+            //     novoCliente.Nome = Console.ReadLine();
+            //     repo.Criar(novoCliente);
+            //     Console.WriteLine($"{novoCliente.Nome} Criado");
+            // }while(Console.ReadKey().Key != ConsoleKey.Tab);
+
+            // var listaClientesNovosEAntigos = repo.ObterTodos();
+            // foreach (var item in listaClientesNovosEAntigos)
+            // {
+            //    Console.WriteLine(item);
+            // }
 
         }
     }
