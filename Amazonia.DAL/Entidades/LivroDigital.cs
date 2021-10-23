@@ -10,5 +10,10 @@ namespace Amazonia.DAL.Entidades
         {
             return base.ObterPreco() * 0.9M;
         }
+
+        public override string ToString()
+        {
+            return base.ToString() + $"=> Informações de Licença: {InformacoesLicenca}";
+        }
     }
 }
