@@ -13,7 +13,7 @@ namespace Amazonia.DAL.Entidades
 
         public override string ToString()
         {
-            return base.ToString() + $"=> Informações de Licença: {InformacoesLicenca}";
+            return $"Livro Digital: " + base.ToString() + $"Informacoes Licenca: {InformacoesLicenca}";
         }
     }
 }

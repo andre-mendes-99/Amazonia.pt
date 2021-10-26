@@ -118,10 +118,9 @@ namespace Amazonia.DAL.Repositorios
             return resultado;
         }
 
-       public void GerarRelatorio()
-       {
-           IImpressora impressora = new ImpressoraPapel();
-           impressora.Imprimir();
-       }
+        public void GerarRelatorio(IImpressora impressora)
+        {            
+            impressora.Imprimir();
+        }
     }
 }

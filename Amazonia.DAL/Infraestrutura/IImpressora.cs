@@ -1,7 +1,7 @@
-namespace Amazonia.DAL.Infraestrutura
+namespace Amazonia.DAL.Infraestrutura //TODO: Remover Impressora desse PROJETO
 {
-  public  interface IImpressora
+    public interface IImpressora
     {
-         void Imprimir();
+        void Imprimir();   
     }
 }

@@ -8,24 +8,26 @@ namespace Amazonia.ConsoleAPP
     {
         static void Main(string[] args)
         {
-            // ListarClientes();
-            ListarLivros();
+        //    ListarClientes();
+           ListarLivros();
         }
 
-        public static void ListarLivros()
-        {
+
+        public static void ListarLivros(){
+            
             var repo = new RepositorioLivro();
             var listaLivros = repo.ObterTodos();
 
             foreach (var item in listaLivros)
             {
-              System.Console.WriteLine(item);  
+                System.Console.WriteLine(item);
             }
         }
 
-        public static void ListarClientes()
-        {
-            Console.WriteLine("Consulta do Database");
+
+
+        public static void ListarClientes(){
+             Console.WriteLine("Consulta do Database");
 
             var repo = new RepositorioCliente();
             // var listaClientes = repo.ObterTodos();

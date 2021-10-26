@@ -1,12 +1,13 @@
-using Amazonia.DAL.Infraestrutura;
 
 namespace Amazonia.DAL.Infraestrutura
-{
-  public  class ImpressoraPDF : IImpressora
+ {
+    public class ImpressoraPDF : IImpressora
     {
         public void Imprimir()
         {
-            System.Console.WriteLine("Usando impressora PDF");
+            System.Console.WriteLine("Usando Impressora PDF");            
+            //Aqui entrariam as regras para gerar um PDF....
+
         }
     }
 }
