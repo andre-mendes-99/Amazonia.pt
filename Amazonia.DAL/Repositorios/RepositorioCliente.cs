@@ -8,7 +8,7 @@ namespace Amazonia.DAL.Repositorios
 {
     public class RepositorioCliente : IRepositorio<Cliente>
     {
-        private readonly List<Cliente> Lista;
+        private List<Cliente> Lista;
         public RepositorioCliente()
         {
             Lista = new List<Cliente>();
