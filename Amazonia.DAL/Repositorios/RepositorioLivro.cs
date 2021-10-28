@@ -46,6 +46,13 @@ namespace Amazonia.DAL.Repositorios
                 Autor = "JK"
             };
             Lista.Add(hpImp);
+
+            var hgImp = new LivroImpresso
+            {
+                Nome = "Hunger Games",
+                Autor = "..."
+            };
+            Lista.Add(hpImp);
         }
 
 
