@@ -54,7 +54,7 @@ namespace Amazonia.DAL.Tests
             //Assert
             Assert.IsNotNull(repositorio);
             Assert.IsNotNull(livros);
-            //Assert.IsTrue(quantidadedeLivrosNoRepositorio >= quantidadedeElementos);
+            //Assert.IsTrue(quantidadedeLivrosNoRepositorio == quantidadedeElementos);
             Assert.AreEqual(quantidadedeLivrosNoRepositorio, quantidadedeElementos);
         }    
     }
