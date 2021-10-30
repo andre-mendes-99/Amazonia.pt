@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Configuration;
 using Amazonia.DAL.Repositorios;
-
+using Amazonia.DAL.Utils;
 
 namespace Amazonia.ConsoleAPP
 {
@@ -9,8 +9,10 @@ namespace Amazonia.ConsoleAPP
     {
         static void Main(string[] args)
         {
-            //    ListarClientes()
-            var chaveexemplo = ConfigurationManager.AppSettings["chaveexemplo"];
+            var valorObtidoPeloMetodo = Exemplo.ObterValorDoConfig("chaveExemplo");
+
+
+            var chaveExemplo = ConfigurationManager.AppSettings["chaveExemplo"];            
 
             var usarRegranovaStr = ConfigurationManager.AppSettings["regraNovaAtiva"];
             var usarRegranova = Convert.ToBoolean(usarRegranovaStr);
@@ -22,14 +24,11 @@ namespace Amazonia.ConsoleAPP
             else
             {
                 ListarLivros();
-            }
-           
+            }           
 
-            
-            //FeatureFlags
+
         }
-
-
+    
         public static void ListarLivros(){
             
             var repo = new RepositorioLivro();
