@@ -7,7 +7,7 @@ namespace Amazonia.DAL.Infraestrutura
     {
         public AmazoniaException(string tipoErro)
         {
-            var path = @"C:\Rumos\Academia Full Stack Developer\Amazonia.pt\";
+            var path = @"c:\temp\";
             if (Directory.Exists(path) == false)
             {
                 Directory.CreateDirectory(path);                

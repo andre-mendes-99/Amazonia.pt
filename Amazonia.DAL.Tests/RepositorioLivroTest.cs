@@ -102,6 +102,6 @@ namespace Amazonia.DAL.Tests
 
             //assert
             Assert.IsTrue(livrosInicialmente > livrosDepoisDeApagar);
-        }       
+        }
     }
 }
