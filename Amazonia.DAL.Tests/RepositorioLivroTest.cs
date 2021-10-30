@@ -103,5 +103,15 @@ namespace Amazonia.DAL.Tests
             //assert
             Assert.IsTrue(livrosInicialmente > livrosDepoisDeApagar);
         }
+
+        [TestMethod]
+        public void MyTestMethod()
+        {
+            //Arrange
+            
+            //Action
+
+            //Assert
+        }
     }
 }
