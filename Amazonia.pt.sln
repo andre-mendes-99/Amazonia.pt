@@ -13,7 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazonia.WebAPP", "Amazonia
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazonia.ConsoleApp", "Amazonia.ConsoleApp\Amazonia.ConsoleApp.csproj", "{9D837F7E-68DE-42B8-841A-95A0F7C672C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Amazonia.DAL.Tests", "Amazonia.DAL.Tests\Amazonia.DAL.Tests.csproj", "{F29B2516-FB18-40C0-B32C-CDABDBF02B6F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Amazonia.DAL.Tests", "Amazonia.DAL.Tests\Amazonia.DAL.Tests.csproj", "{F29B2516-FB18-40C0-B32C-CDABDBF02B6F}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Amazonia.Database", "Amazonia.Database\Amazonia.Database.sqlproj", "{85DC6AA5-106B-4D86-9C78-E2677854909F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -97,6 +99,24 @@ Global
 		{F29B2516-FB18-40C0-B32C-CDABDBF02B6F}.Release|x64.Build.0 = Release|Any CPU
 		{F29B2516-FB18-40C0-B32C-CDABDBF02B6F}.Release|x86.ActiveCfg = Release|Any CPU
 		{F29B2516-FB18-40C0-B32C-CDABDBF02B6F}.Release|x86.Build.0 = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|x64.Build.0 = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|x64.Deploy.0 = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|x86.Build.0 = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Debug|x86.Deploy.0 = Debug|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|x64.ActiveCfg = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|x64.Build.0 = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|x64.Deploy.0 = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|x86.ActiveCfg = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|x86.Build.0 = Release|Any CPU
+		{85DC6AA5-106B-4D86-9C78-E2677854909F}.Release|x86.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
