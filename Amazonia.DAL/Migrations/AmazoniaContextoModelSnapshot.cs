@@ -43,7 +43,8 @@ namespace Amazonia.DAL.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(32)
+                        .HasColumnType("nvarchar(32)");
 
                     b.Property<string>("UserName")
                         .IsRequired()
@@ -55,6 +56,45 @@ namespace Amazonia.DAL.Migrations
                     b.HasIndex("MoradaId");
 
                     b.ToTable("Clientes");
+                });
+
+            modelBuilder.Entity("Amazonia.DAL.Modelo.Livro", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Autor")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<string>("Descricao")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Idioma")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)");
+
+                    b.Property<Guid?>("VendaId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("VendaId");
+
+                    b.ToTable("Livros");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Livro");
                 });
 
             modelBuilder.Entity("Amazonia.DAL.Modelo.Morada", b =>
@@ -90,6 +130,88 @@ namespace Amazonia.DAL.Migrations
                     b.ToTable("Moradas");
                 });
 
+            modelBuilder.Entity("Amazonia.DAL.Modelo.Venda", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid?>("ClienteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ClienteId");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("Amazonia.DAL.Modelo.AudioLivro", b =>
+                {
+                    b.HasBaseType("Amazonia.DAL.Modelo.Livro");
+
+                    b.Property<int?>("DuracaoLivroEmMinutos")
+                        .HasColumnType("int");
+
+                    b.Property<string>("FormatoFicheiro")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)");
+
+                    b.HasDiscriminator().HasValue("AudioLivro");
+                });
+
+            modelBuilder.Entity("Amazonia.DAL.Modelo.LivroDigital", b =>
+                {
+                    b.HasBaseType("Amazonia.DAL.Modelo.Livro");
+
+                    b.Property<string>("FormatoFicheiro")
+                        .IsRequired()
+                        .HasMaxLength(5)
+                        .HasColumnType("nvarchar(5)")
+                        .HasColumnName("LivroDigital_FormatoFicheiro");
+
+                    b.Property<string>("InformacoesLicenca")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TamanhoEmMB")
+                        .HasColumnType("int");
+
+                    b.HasDiscriminator().HasValue("LivroDigital");
+                });
+
+            modelBuilder.Entity("Amazonia.DAL.Modelo.LivroImpresso", b =>
+                {
+                    b.HasBaseType("Amazonia.DAL.Modelo.Livro");
+
+                    b.Property<float>("Altura")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Largura")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Peso")
+                        .HasColumnType("real");
+
+                    b.Property<float>("Profundidade")
+                        .HasColumnType("real");
+
+                    b.Property<int>("QuantidadePaginas")
+                        .HasColumnType("int");
+
+                    b.HasDiscriminator().HasValue("LivroImpresso");
+                });
+
+            modelBuilder.Entity("Amazonia.DAL.Modelo.Periodico", b =>
+                {
+                    b.HasBaseType("Amazonia.DAL.Modelo.Livro");
+
+                    b.Property<DateTime>("DataLancamento")
+                        .HasColumnType("datetime2");
+
+                    b.HasDiscriminator().HasValue("Periodico");
+                });
+
             modelBuilder.Entity("Amazonia.DAL.Modelo.Cliente", b =>
                 {
                     b.HasOne("Amazonia.DAL.Modelo.Morada", "Morada")
@@ -97,6 +219,27 @@ namespace Amazonia.DAL.Migrations
                         .HasForeignKey("MoradaId");
 
                     b.Navigation("Morada");
+                });
+
+            modelBuilder.Entity("Amazonia.DAL.Modelo.Livro", b =>
+                {
+                    b.HasOne("Amazonia.DAL.Modelo.Venda", null)
+                        .WithMany("Livros")
+                        .HasForeignKey("VendaId");
+                });
+
+            modelBuilder.Entity("Amazonia.DAL.Modelo.Venda", b =>
+                {
+                    b.HasOne("Amazonia.DAL.Modelo.Cliente", "Cliente")
+                        .WithMany()
+                        .HasForeignKey("ClienteId");
+
+                    b.Navigation("Cliente");
+                });
+
+            modelBuilder.Entity("Amazonia.DAL.Modelo.Venda", b =>
+                {
+                    b.Navigation("Livros");
                 });
 #pragma warning restore 612, 618
         }

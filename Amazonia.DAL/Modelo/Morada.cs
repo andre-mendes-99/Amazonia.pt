@@ -6,16 +6,13 @@ namespace Amazonia.DAL.Modelo
     {
         [Required]
         public string Distrito { get; set; }
-
         [Required]
         public string Localidade { get; set; }
-
         [Required]
         public string Endereco { get; set; }
-
+        
         [Required]
-        [MinLength(7), MaxLength(7)]
+        [MinLength(7),MaxLength(7)]
         public string CodigoPostal { get; set; }
     }
-
 }

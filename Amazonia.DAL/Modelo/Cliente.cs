@@ -1,10 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Amazonia.DAL.Modelo
 {
@@ -16,19 +12,19 @@ namespace Amazonia.DAL.Modelo
         public string UserName { get; set; }
 
         [Required]
+        [MinLength(32), MaxLength(32)]
         public string Password { get; set; }
 
         [Required]
-        public DateTime DataNascimento { get; set; }
-
+        public DateTime DataNascimento { get; set; }     
+        
         [Required]
-        [MinLength(9), MaxLength(9)]
+        [MinLength(9),MaxLength(9)]
         public string NumeroIdentificacaoFiscal { get; set; }
 
         [NotMapped]
         public int Idade => DateTime.Now.Year - DataNascimento.Year;
 
         public virtual Morada Morada { get; set; }
-
     }
 }
