@@ -1,7 +1,6 @@
 ﻿using Amazonia.DAL.Modelo;
 using Amazonia.DAL.Repositorios;
 using Amazonia.WebApi.Dto;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -97,19 +96,22 @@ namespace Amazonia.WebApi.Controllers
 
 
         [HttpPost] //Upsert
+        [Route("DadosNovos")]
         public bool UpdateOrInsertClienteComMorada(ClienteMoradaDto dadosNovos)
         {
             Cliente cli = repo.ObterPorNif(dadosNovos.NumeroIdentificacaoFiscal);
             if (cli == null)
             {
-                cli = new Cliente {
-                    Nome = dadosNovos.Nome, 
-                    NumeroIdentificacaoFiscal = dadosNovos.NumeroIdentificacaoFiscal ,
+                cli = new Cliente
+                {
+                    Nome = dadosNovos.Nome,
+                    NumeroIdentificacaoFiscal = dadosNovos.NumeroIdentificacaoFiscal,
                     /*Demais campos*/
-                };             
+                };
             }
 
-            cli.Morada = new Morada { 
+            cli.Morada = new Morada
+            {
                 Distrito = dadosNovos.Distrito /**/
             };
 
